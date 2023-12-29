@@ -50,12 +50,12 @@ type From struct {
 
 // Chat struct
 type Chat struct {
-	ID                           int    `json:"id"`
-	FirstName                    string `json:"first_name"`
-	UserName                     string `json:"username"`
-	Type                         string `json:"type"`
-	Title                        string `json:"title"`
-	AllMembersAreAdministrators  bool   `json:"all_members_are_administrators"`
+	ID                          int    `json:"id"`
+	FirstName                   string `json:"first_name"`
+	UserName                    string `json:"username"`
+	Type                        string `json:"type"`
+	Title                       string `json:"title"`
+	AllMembersAreAdministrators bool   `json:"all_members_are_administrators"`
 }
 
 // Entities struct
@@ -63,4 +63,32 @@ type Entities struct {
 	Type   string `json:"type"`
 	Offset int    `json:"offset"`
 	Length int    `json:"length"`
+}
+
+var WeekdaysMap = map[string]string{
+	"Sunday":    "یکشنبه",
+	"Monday":    "دوشنبه",
+	"Tuesday":   "سه شنبه",
+	"Wednesday": "چهارشنبه",
+	"Saturday":  "شنبه",
+	"Thursday":  "پنجشنبه",
+	"Friday":    "جمعه",
+}
+var FoodList = []string{
+	"کباب برگ",
+	"قورمه سبزی",
+	"ته‌چین",
+	"زرشک پلو",
+	"آبگوشت",
+	"خوراک",
+	"میرزاقاسمی",
+	"قیمه",
+	"کوکو",
+	"آش",
+}
+
+type UserSelection struct {
+	SelectedDay      string
+	SelectedLocation string
+	SelectedFood     string
 }
