@@ -45,13 +45,13 @@ func main() {
 
 		if update.Message != nil && update.Message.IsCommand() {
 			switch update.Message.Command() {
-			case "sendCode":
+			case "send":
 				reqType := "set"
 				userSelections[update.Message.Chat.ID] = &models.UserSelection{} // reset/init user state
 				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Select a day:")
 				msg.ReplyMarkup = api.MakeWeekdayKeyboard(reqType)
 				bot.Send(msg)
-			case "requestCode":
+			case "request":
 				reqType := "get"
 				userSelections[update.Message.Chat.ID] = &models.UserSelection{}
 				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Select a location:")
